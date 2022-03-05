@@ -33,7 +33,7 @@ podTemplate(yaml: '''
             secretName: dockercred
             items:
             - key: .dockerconfigjson
-              path: config.json
+              path: /kaniko/.docker/config.json
 ''') {
   node(POD_LABEL) {
     stage('Build a gradle project') {
