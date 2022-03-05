@@ -42,7 +42,7 @@ podTemplate(yaml: '''
         stage('Build a gradle project') {
           sh '''
           ./Chapter08/sample1/gradlew build
-          mv ./Chapter08/sample1/build/libs/calculator-0.0.1-SNAPSHOT.jar /mnt
+          mv ./build/libs/calculator-0.0.1-SNAPSHOT.jar /mnt
           '''
         }
       }
