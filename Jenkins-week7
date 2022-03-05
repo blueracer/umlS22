@@ -20,8 +20,8 @@ podTemplate(yaml: '''
         - 9999999
         volumeMounts:
         - name: shared-storage
-          mountPath: /mnt 
-        - name: shared-storage
+          mountPath: /mnt
+        - name: kaniko-secret
           mountPath: /kaniko/.docker
       restartPolicy: Never
       volumes:
@@ -64,7 +64,7 @@ podTemplate(yaml: '''
           echo 'ENTRYPOINT ["java", "-jar", "app.jar"]' >> Dockerfile
           ls /mnt/*jar
           mv /mnt/calculator-0.0.1-SNAPSHOT.jar .
-          /kaniko/executor --context `pwd` --destination blueracer/hello-kaniko:1.0
+          /kaniko/executor --context `pwd` --destination blueracer/hello-kaniko:1.0 --force
           '''
         }
       }
