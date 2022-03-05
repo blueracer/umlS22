@@ -43,7 +43,7 @@ podTemplate(yaml: '''
           sh '''
           ls -l
           ./Chapter08/sample1/gradlew build
-          ls -l /Chapter08/sample1/
+          ls -l
           mv ./build/libs/calculator-0.0.1-SNAPSHOT.jar /mnt
           '''
         }
